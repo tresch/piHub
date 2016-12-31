@@ -312,7 +312,7 @@ while True:
     f.write('</body></html>')
     f.close()
 
-    db = MySQLdb.connect("localhost", "pi", "piTin", "piHub")
+    db = MySQLdb.connect("localhost", "pi", "changepassword", "piHub")
     curs=db.cursor()
 
     try:
