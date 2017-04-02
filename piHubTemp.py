@@ -3,6 +3,8 @@
 # more details at http://blog.riyas.org
 # Credits to python port of nrf24l01, Joao Paulo Barrac & maniacbugs original c library
 
+# last update 4/2/2017
+
 import sys
 sys.path.insert(0, '../nrf24pihub')
 import nrf24
@@ -382,6 +384,14 @@ while True:
     f.write('<br>')
     f.write('</body></html>')
     f.close()
+
+    # normalization - trial and error adjustments to get temps about the same...
+    if(dataPoints[0] == 'POOL'):
+        dataPoints[2] = str(float(dataPoints[2]) + 1.6);
+	dataPoints[3] = str(float(dataPoints[3]) - 0.9);
+    elif(dataPoints[0] == 'LIVING'):
+        dataPoints[2] = str(float(dataPoints[2]) + 0.5);
+        dataPoints[3] = str(float(dataPoints[3]) + 0.5);
 
     db = MySQLdb.connect("localhost", "pi", "piTin", "piHub")
     curs=db.cursor()
