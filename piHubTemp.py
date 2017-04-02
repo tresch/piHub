@@ -387,7 +387,7 @@ while True:
 
     # normalization - trial and error adjustments to get temps about the same...
     if(dataPoints[0] == 'POOL'):
-        dataPoints[2] = str(float(dataPoints[2]) + 1.6);
+        dataPoints[2] = str(float(dataPoints[2]) + 1.7);
 	dataPoints[3] = str(float(dataPoints[3]) - 0.9);
     elif(dataPoints[0] == 'LIVING'):
         dataPoints[2] = str(float(dataPoints[2]) + 0.5);
